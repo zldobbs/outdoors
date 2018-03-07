@@ -1,0 +1,157 @@
+/* include materialize-css styles */
+@import '../../node_modules/materialize-css/sass/materialize.scss';
+/* include google fonts */
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Neuton');
+
+/* custom styling with sass */
+
+/* variable declarations */
+$black: #000;
+$black-green: #102A00;
+$white: #FFF;
+$white-green: #F6FDEF;
+$dark-grey: #464A41;
+$light-green: #899B74;
+$dark-green: #2B431D;
+$light-red: #AA0137;
+$dark-red: #640020;
+
+$heading-font: 'Bowlby One SC', cursive;
+$body-font: 'Neuton', serif;
+
+/* update default styles from materialize */
+body {
+  background-image: url('../img/wood.jpg');
+  background-repeat: repeat;
+  // letter-spacing: 110%;
+  font-family: $body-font;
+}
+h1, h2, h3, h4, h5 {
+  font-family: $heading-font;
+  text-shadow: 1px 1px $black;
+  color: $white;
+}
+.nav, .nav-wrapper {
+  background-color: $dark-green;
+}
+.btn, .btn:focus  {
+  @extend .waves-effect, .waves-light;
+  width: 100%;
+  background-color: $dark-red;
+}
+.btn:hover {
+  background-color: $light-red;
+}
+.card {
+  background-color: $light-green;
+}
+.container {
+  @extend .z-depth-5;
+}
+// NOTE maybe applying this to all isn't the best call
+.row {
+  margin-bottom: 0;
+}
+
+.logo-bar {
+  background-color: $white-green;
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+.icon-img {
+  padding-top: 20px;
+
+  // img {
+  //   width: 70px;
+  //   height: 70px;
+  // }
+}
+
+/*
+  TODO make the carousel (NOTE: SLIDER) height fill remaining height
+  -- use calculated heights of each navbar for different media settings
+*/
+
+.carousel-text, .carousel-subtext, .carousel-button {
+  width: 100%;
+  position: absolute;
+  top: 5vh;
+  text-align: center;
+  color: $white;
+  z-index: 1;
+
+  @media #{$large-and-up} {
+    width: 40%;
+  }
+}
+
+#goat {
+  .carousel-text, .carousel-subtext, .carousel-button {
+    right: 5vh;
+  }
+}
+
+#cabin {
+  .carousel-text, .carousel-subtext, .carousel-button {
+    left: 5vh;
+  }
+}
+
+.carousel-text {
+  @media #{$medium-and-down} {
+    top: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+.carousel-subtext {
+  top: 20vh;
+  @extend .hide-on-small-only;
+}
+
+.carousel-button {
+  top: 35vh;
+  right: 0;
+}
+
+.carousel-item {
+  img {
+    @extend .responsive-img;
+
+    z-index: 420;
+  }
+}
+
+.info-row {
+  color: white;
+  background-color: $dark-grey;
+}
+
+// #info1 {
+//   @extend .indigo, .darken-3;
+// }
+
+// #info2 {
+//   @extend .lime, .darken-3;
+// }
+
+.button-box {
+  margin: 0 auto;
+  a {
+    display: block;
+    margin: 20px;
+  }
+}
+
+.footer-content {
+  @extend .z-depth-3;
+
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  color: $white;
+  background-color: $black-green;
+}
